@@ -4,6 +4,11 @@
     <title>Nuevo Autor</title>
 </head>
 <body>
+    {% extends 'myapp/header.html'%}
+
+    {% block title %}Nuevo Autor{% endblock %}
+
+    {% block content %}
     <h1>Nuevo Autor</h1>
     <form method="post">
         {% csrf_token %}
@@ -17,5 +22,6 @@
             <li>{{ autor.name }}: {{ autor.posts }}</li>
         {% endfor %}
     </ul>
+    {% endblock %}
 </body>
 </html>

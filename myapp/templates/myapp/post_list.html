@@ -4,19 +4,11 @@
     <title>Posts</title>
 </head>
 <body>
-    <header>
-        <ul class="nav">
-            <li>
-                <a href="/autores/new">Autores</a>
-            </li>
-            <li>
-                <a href="/post/new">Nuevo Post</a>
-            </li>
-            <li>
-                <a href="/categoria/new">Categorias</a>
-            </li>
-        </ul>
-    </header>
+    {% extends 'myapp/header.html'%}
+
+    {% block title %}Nuevo Autor{% endblock %}
+
+    {% block content %}
     <h1>LISTA DE POST CREADOS</h1>
     <ul>
         {% for post in posts %}
@@ -24,6 +16,7 @@
         {% endfor %}
     </ul>
     <a class="btn" href="{% url 'post_new' %}">Agregar nuevo post</a>
+    {% endblock %}
 </body>
 <style>
     body {
@@ -38,12 +31,6 @@
         color: #fff;
         padding: 10px;
     }
-    .nav {
-        display: flex;
-        list-style: none;
-        gap: 20px;
-    }
-
 </style>
 </html>
 
