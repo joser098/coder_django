@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuevo Autor</title>
+</head>
+<body>
+    <h1>Nuevo Autor</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h1>LISTA DE AUTORES Y POST PUBLICADOS</h1>
+    <ul>
+        {% for autor in autores %}
+            <li>{{ autor.name }}: {{ autor.posts }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

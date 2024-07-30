@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts</title>
+</head>
+<body>
+    <header>
+        <ul class="nav">
+            <li>
+                <a href="/autores/new">Autores</a>
+            </li>
+            <li>
+                <a href="/post/new">Nuevo Post</a>
+            </li>
+        </ul>
+    </header>
+    <h1>LISTA DE POST CREADOS</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.title }}: {{ post.content }}</li>
+        {% endfor %}
+    </ul>
+    <a class="btn" href="{% url 'post_new' %}">Agregar nuevo post</a>
+</body>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        border: 1px;
+        border-radius: 10px;
+        background-color: #555;
+        color: #fff;
+        padding: 10px;
+    }
+    .nav {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+    }
+
+</style>
+</html>
+
