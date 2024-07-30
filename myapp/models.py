@@ -13,4 +13,11 @@ class Autores(models.Model):
     posts = models.CharField(max_length=5)
 
     def __str__(self):
+        return self.name
+
+class Categoria(models.Model):
+    name = models.CharField(max_length=100)
+    posts = models.CharField(max_length=5)
+
+    def __str__(self):
         return self.name    

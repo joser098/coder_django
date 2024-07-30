@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nuevo Categoria</title>
+</head>
+<body>
+    <h1>Nuevo Categoria</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Guardar</button>
+    </form>
+
+    <h2>Buscar cantidad de posts de una Categoria</h2>
+    <input type="text">
+</body>
+</html>
